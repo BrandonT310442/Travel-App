@@ -1,26 +1,20 @@
-<script>
-</script>
+
 
 <template>
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
+  <TheNavigation/>
       <br>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
+      
+  <div class="container">
 
-      <router-view></router-view>
+    <router-view :key="$route.path"></router-view>
+
+  </div>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+<script>
+import TheNavigation from './components/TheNavigation.vue'
+export default{
+  components: {TheNavigation}
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+</script>
+
